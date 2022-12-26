@@ -2,7 +2,7 @@
 /.classpath
 /.fbExcludeFilterFile
 /.project
-/logs
+/logs/
 .settings/
 .metadata/*
 .idea/
