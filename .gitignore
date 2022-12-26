@@ -1,0 +1,8 @@
+/target/
+/.classpath
+/.fbExcludeFilterFile
+/.project
+.settings/
+.metadata/*
+.idea/
+*.iml
