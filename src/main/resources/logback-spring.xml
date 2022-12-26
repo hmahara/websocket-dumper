@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	       <encoder>
+	            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+	            </pattern>
+	        </encoder>
+	    </appender>
+	
+
+	    
+	    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  
+		  <file>logs/websocket-dumper.log</file>
+		  
+		  <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		    <Pattern>
+		      %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n
+		    </Pattern>
+		  </encoder>
+		
+		  <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		    <fileNamePattern>
+		      logs/archived/log_%d{dd-MM-yyyy}.log
+		    </fileNamePattern>
+		    <maxHistory>5</maxHistory>
+		    <totalSizeCap>100MB</totalSizeCap>
+		  </rollingPolicy>
+		
+		</appender>
+	    
+		<logger name="org.springframework" level="WARN" />
+	    <logger name="org.springframework.transaction" level="WARN" />
+	    <logger name="org.springframework.jdbc.datasource" level="WARN" />
+	    <logger name="org.springframework.orm" level="WARN" />
+	    <logger name="org.springframework.scheduling.quartz" level="WARN" />
+	    <!-- Console output log level -->
+	    <root level="info">
+	        <appender-ref ref="FILE" />
+	        <appender-ref ref="STDOUT" /> <appender-ref ref="STDOUT" />
+	    </root>
+
+	
+	
+	
+
+</configuration>
